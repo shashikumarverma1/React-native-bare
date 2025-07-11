@@ -23,13 +23,13 @@ jobs:
         run: |
           npm install
 
-      # - name: 📱 Setup Java & Android SDK
-      #   uses: reactivecircus/android-emulator-runner@v2
-      #   with:
-      #     api-level: 34  # or 35 if needed
-      #     target: default
-      #     arch: x86_64
-      #     script: echo "Android SDK setup only"
+      - name: 📱 Setup Java & Android SDK
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34  # or 35 if needed
+          target: default
+          arch: x86_64
+          script: echo "Android SDK setup only"
 
       # - name: 🛠️ Build APK
       #   run: |
