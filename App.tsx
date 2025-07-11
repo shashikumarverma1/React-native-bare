@@ -5,16 +5,16 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+
+import { StatusBar, StyleSheet, useColorScheme, View , Text } from 'react-native';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
-
+console.log("wwowo" , 999)
   return (
     <View style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
+      <Text style={{padding:50}}>wowo</Text>
     </View>
   );
 }
