@@ -23,21 +23,21 @@ jobs:
         run: |
           npm install
 
-      - name: 📱 Setup Java & Android SDK
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 34  # or 35 if needed
-          target: default
-          arch: x86_64
-          script: echo "Android SDK setup only"
+      # - name: 📱 Setup Java & Android SDK
+      #   uses: reactivecircus/android-emulator-runner@v2
+      #   with:
+      #     api-level: 34  # or 35 if needed
+      #     target: default
+      #     arch: x86_64
+      #     script: echo "Android SDK setup only"
 
-      - name: 🛠️ Build APK
-        run: |
-          cd android
-          ./gradlew assembleRelease
+      # - name: 🛠️ Build APK
+      #   run: |
+      #     cd android
+      #     ./gradlew assembleRelease
 
-      - name: 📤 Upload APK artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: MyApp-APK
-          path: android/app/build/outputs/apk/release/app-release.apk
+      # - name: 📤 Upload APK artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: MyApp-APK
+      #     path: android/app/build/outputs/apk/release/app-release.apk
