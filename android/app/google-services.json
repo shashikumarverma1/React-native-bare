@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "503634198560",
+    "project_id": "ssf-app2",
+    "storage_bucket": "ssf-app2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503634198560:android:7146f9bda80d59ed083c45",
+        "android_client_info": {
+          "package_name": "com.shashi.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJiNajskyZgBBL5Dxe5k4JE3YWhBaA2oQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

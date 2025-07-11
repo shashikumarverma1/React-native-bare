@@ -1,16 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
 
 
 import { StatusBar, StyleSheet, useColorScheme, View , Text } from 'react-native';
-
+import React  , {useEffect} from "react"
+import { notificationListener, requestUserPermission } from './utils/notification';
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
-console.log("wwowo" , 999)
+ useEffect(() => {
+    requestUserPermission();
+    notificationListener();
+  }, []);
   return (
     <View style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
