@@ -19,9 +19,9 @@ jobs:
         with:
           node-version: 18
 
-      - name: 📦 Install dependencies
-        run: |
-          npm install
+      # - name: 📦 Install dependencies
+      #   run: |
+      #     npm install
 
       # - name: 📱 Setup Java & Android SDK
       #   uses: reactivecircus/android-emulator-runner@v2
@@ -41,15 +41,15 @@ jobs:
       - name: 🛠️ Build AAB
         run: cd android && ./gradlew bundleRelease
 
-      # - name: 🧾 Decode Play Store JSON key
-      #   run: echo "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}" > android/play-upload-key.json
+      - name: 🧾 Decode Play Store JSON key
+        run: echo "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}" > android/play-upload-key.json
 
-      # - name: 🚀 Upload AAB to Play Store
-      #   uses: r0adkll/upload-google-play@v1
-      #   with:
-      #     serviceAccountJson: android/play-upload-key.json
-      #     packageName: ${{ secrets.PACKAGE_NAME }}
-      #     releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
-      #     track: internal
+      - name: 🚀 Upload AAB to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: android/play-upload-key.json
+          packageName: ${{ secrets.PACKAGE_NAME }}
+          releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
+          track: internal
 
   
