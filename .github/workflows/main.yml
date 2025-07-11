@@ -32,13 +32,24 @@ jobs:
       #     script: echo "Android SDK setup only"
       - name: 🛠️ Grant execute permission to gradlew
         run: chmod +x android/gradlew
-      - name: 🛠️ Build APK
-        run: |
-          cd android
-          ./gradlew assembleRelease
 
-      # - name: 📤 Upload APK artifact
-      #   uses: actions/upload-artifact@v3
+      # - name: 🛠️ Build APK
+      #   run: |
+      #     cd android
+      #     ./gradlew assembleRelease
+       
+      - name: 🛠️ Build AAB
+        run: cd android && ./gradlew bundleRelease
+
+      # - name: 🧾 Decode Play Store JSON key
+      #   run: echo "${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}" > android/play-upload-key.json
+
+      # - name: 🚀 Upload AAB to Play Store
+      #   uses: r0adkll/upload-google-play@v1
       #   with:
-      #     name: MyApp-APK
-      #     path: android/app/build/outputs/apk/release/app-release.apk
+      #     serviceAccountJson: android/play-upload-key.json
+      #     packageName: ${{ secrets.PACKAGE_NAME }}
+      #     releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
+      #     track: internal
+
+  
