@@ -37,8 +37,8 @@ jobs:
           cd android
           ./gradlew assembleRelease
 
-      # - name: 📤 Upload APK artifact
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: MyApp-APK
-      #     path: android/app/build/outputs/apk/release/app-release.apk
+      - name: 📤 Upload APK artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: MyApp-APK
+          path: android/app/build/outputs/apk/release/app-release.apk
